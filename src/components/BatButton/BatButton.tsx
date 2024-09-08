@@ -1,15 +1,34 @@
-import { Text, Pressable } from "react-native";
+import { StyleSheet, Text, TouchableOpacity } from "react-native";
 import React from "react";
-import { styles } from "./BatButtonStyles";
 
-export default function BatButton({navigation}) {
-  function handleChangePage() {
-    navigation.navigate("Profile", { name: "Jane" });
+export default function BatButton({ navigation }: any) {
+  function handlePress() {
+    navigation.navigate("Form");
   }
 
   return (
-    <Pressable style={styles.buttonContainer} onPress={handleChangePage}>
-      <Text style={styles.text}>ATIVAR CHAMADA</Text>
-    </Pressable>
+    <TouchableOpacity onPress={handlePress} style={styles.buttonContainer}>
+      <Text style={styles.text}>activate bat signal</Text>
+    </TouchableOpacity>
   );
 }
+
+const styles = StyleSheet.create({
+  buttonContainer: {
+    paddingVertical: 12,
+    paddingHorizontal: 32,
+    borderRadius: 5,
+    elevation: 3,
+    width: "80%",
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#222222",
+    marginTop: 60,
+  },
+  text: {
+    color: "#fff",
+    fontSize: 20,
+    fontWeight: "bold",
+    textAlign: "center",
+  },
+});

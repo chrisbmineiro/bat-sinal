@@ -2,19 +2,15 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, TouchableOpacity, Button } from "react-native";
 import React from "react";
 import BatLogo from "../components/BatLogo/BatLogo";
+import BatButton from "../components/BatButton/BatButton";
 
-export default function Home({ navigation }: any) {
-  function handlePress (){
-    navigation.navigate("Form");
-  };
-
+export default function Home({navigation}: any) {
   return (
     <View style={styles.container}>
       <BatLogo />
-      <Button
-        title="ATIVAR CHAMADA"
-        onPress={handlePress} 
-      />
+
+      <BatButton navigation={navigation} />
+
       <StatusBar style="auto" />
     </View>
   );
@@ -26,22 +22,5 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
-  },
-  buttonContainer: {
-    paddingVertical: 12,
-    paddingHorizontal: 32,
-    borderRadius: 4,
-    elevation: 3,
-    width: "100%",
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "#000000",
-    marginTop: 10,
-  },
-  text: {
-    color: "#E5BF3C",
-    fontSize: 20,
-    fontWeight: "bold",
-    textAlign: "center",
   },
 });
